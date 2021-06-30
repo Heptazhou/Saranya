@@ -23,6 +23,10 @@ const POSTSCRIPT = 6;
 const TRADEMARK = 7;
 const MANUFACTURER = 8;
 const DESIGNER = 9;
+const DESCRIPTION = 10;
+const MANUFACTURER_URL = 11;
+const LICENSE = 13;
+const LICENSE_URL = 14;
 const PREFERRED_FAMILY = 16;
 const PREFERRED_STYLE = 17;
 function convPostscript(name) {
@@ -91,11 +95,20 @@ function nameFont(font, fMono, selectorList, encodings, namings) {
 		if (ng.copyright)
 			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, COPYRIGHT, ng.copyright));
 		if (ng.version) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, VERSION, ng.version));
-		if (ng.manufacturer)
-			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER, ng.copyright));
 		if (ng.trademark)
 			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, TRADEMARK, ng.trademark));
+		if (ng.manufacturer)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER, ng.manufacturer));
 		if (ng.designer) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, DESIGNER, ng.designer));
+		if (ng.description)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, DESCRIPTION, ng.description));
+		if (ng.manufacturer_url)
+			nameTable.push(
+				nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER_URL, ng.manufacturer_url)
+			);
+		if (ng.license) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, LICENSE, ng.license));
+		if (ng.license_url)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, LICENSE_URL, ng.license_url));
 	}
 	font.name = nameTable;
 

@@ -10,10 +10,14 @@ const fs = require("fs-extra");
 const path = require("path");
 const os = require("os");
 
+// Injection
+const DEFAULTNAME = `saranya`;
+const DEFAULTFAMILY = `mono`;
+
 // Directories
-const PREFIX = `sarasa`;
+const PREFIX = `saranya`;
 const BUILD = `.build`;
-const OUT = `out`;
+const OUT = `dist`;
 const SOURCES = `sources`;
 
 // Command line
@@ -69,7 +73,7 @@ const Version = oracle("oracles::version", async t => {
 });
 
 const TtcArchive = file.make(
-	(infix, version) => `${OUT}/sarasa-gothic-${infix}-${version}.7z`,
+	(infix, version) => `${OUT}/${DEFAULTNAME}-${infix}-${version}.7z`,
 	async (t, out, infix) => {
 		await t.need(TtcFontFiles(infix));
 		await rm(out.full);
@@ -78,7 +82,7 @@ const TtcArchive = file.make(
 );
 
 const TtfArchive = file.make(
-	(infix, version) => `${OUT}/sarasa-gothic-${infix}-${version}.7z`,
+	(infix, version) => `${OUT}/${DEFAULTNAME}-${infix}-${version}.7z`,
 	async (t, out, infix) => {
 		const [config] = await t.need(Config, TtfFontFiles(infix));
 		await rm(out.full);
@@ -113,7 +117,7 @@ const BreakShsTtc = task.make(
 		const shsSourceMap = config.shsSourceMap;
 		await run(
 			OTC2OTF,
-			`${SOURCES}/shs/${shsSourceMap.defaultRegion}-${shsSourceMap.style[weight]}.ttc`
+			`${SOURCES}/shs/${shsSourceMap.defaultName}-${shsSourceMap.style[weight]}.ttc`
 		);
 		for (const regionID in shsSourceMap.region) {
 			const region = shsSourceMap.region[regionID];
@@ -265,7 +269,7 @@ const Kanji0 = file.make(
 		const [config] = await t.need(Config, Scripts);
 		const [$1] = await t.need(ShsOtd(region, style), de(out.dir));
 		let $2 = null;
-		if (region === config.shsSourceMap.classicalRegion) {
+		if (config.shsSourceMap.classicalRegion.includes(region)) {
 			[$2] = await t.need(ShsCassicalOverrideOtd(style));
 		}
 		const tmpOTD = `${out.dir}/${out.name}.otd`;
@@ -290,7 +294,10 @@ const Hangul0 = file.make(
 );
 
 const Prod = file.make(
-	(family, region, style) => `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) =>
+		family == DEFAULTFAMILY
+			? `${OUT}/ttf/${PREFIX}-${region}-${style}.ttf`
+			: `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
 	(t, out, family, region, style) =>
 		MakeProd(t, out, family, region, style, {
 			Pass1: HfoPass1,
@@ -300,7 +307,10 @@ const Prod = file.make(
 );
 
 const ProdUnhinted = file.make(
-	(family, region, style) => `${OUT}/ttf-unhinted/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) =>
+		family == DEFAULTFAMILY
+			? `${OUT}/ttf-unhinted/${PREFIX}-${region}-${style}.ttf`
+			: `${OUT}/ttf-unhinted/${PREFIX}-${family}-${region}-${style}.ttf`,
 	(t, out, family, region, style) =>
 		MakeProd(t, out, family, region, style, {
 			Pass1: (w, f, r, s) => Pass1(f, r, s),

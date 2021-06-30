@@ -37,7 +37,7 @@ module.exports = async function (argv) {
 		a.glyf[g].advanceHeight = a.head.unitsPerEm;
 	}
 
-	if (argv.italize) italize(a, -9.4);
+	if (argv.italize) italize(a, -10);
 
 	knockoutSymbols(a, { enclosedAlphaNumerics: !argv.mono, pua: !argv.mono });
 	crossTransfer(a, b, [0x2010, 0x2011, 0x2012, 0x2013, 0x2014, 0x2015]);
@@ -56,6 +56,12 @@ module.exports = async function (argv) {
 			en_US: {
 				copyright: globalConfig.copyright,
 				version: `Version ${packageConfig.version}`,
+				manufacturer: globalConfig.manufacturer,
+				manufacturer_url: globalConfig.manufacturer_url,
+				designer: globalConfig.designer,
+				description: globalConfig.description,
+				license: globalConfig.license,
+				license_url: globalConfig.license_url,
 				family: globalConfig.families[argv.family].naming.en_US + " " + argv.subfamily,
 				style: globalConfig.styles[argv.style].name
 			},
@@ -78,7 +84,7 @@ module.exports = async function (argv) {
 		}
 	);
 
-	if (argv.italize) italize(a, +9.4);
+	if (argv.italize) italize(a, +10);
 	a.glyph_order = gc(a);
 	await buildFont(a, { to: argv.o });
 };

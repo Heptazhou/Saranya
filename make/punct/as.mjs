@@ -2,7 +2,7 @@ import { CliProc, Ot } from "ot-builder";
 
 import { dropCharacters, dropFeature, dropHints } from "../helpers/drop.mjs";
 import { readFont, writeFont } from "../helpers/font-io.mjs";
-import { isFEMisc, isLongDash, isWS, isWestern } from "../helpers/unicode-kind.mjs";
+import { isFEMisc, isLongDash, isWesternSymbol, isWestern } from "../helpers/unicode-kind.mjs";
 
 import { transferMonoGeometry } from "./lgc-helpers.mjs";
 import { sanitizeSymbols, toPWID } from "./sanitize-symbols.mjs";
@@ -15,10 +15,14 @@ async function pass(argv) {
 	dropHints(main);
 	dropCharacters(
 		main,
-		c => isWestern(c - 0) || isLongDash(c - 0, argv.term) || isWS(c - 0) || isFEMisc(c - 0)
+		c =>
+			isWestern(c, argv.term) ||
+			isLongDash(c, argv.term) ||
+			isWesternSymbol(c, argv.term) ||
+			isFEMisc(c, argv.term)
 	);
 	if (argv.pwid) toPWID(main);
-	if (argv.mono) transferMonoGeometry(main, lgc);
+	if (argv.mono) transferMonoGeometry(main, lgc, argv.term);
 	if (!argv.pwid) sanitizeSymbols(main, argv.goth, !argv.pwid && !argv.term);
 
 	dropFeature(main.gsub, ["ccmp", "aalt", "pwid", "fwid", "hwid", "twid", "qwid"]);

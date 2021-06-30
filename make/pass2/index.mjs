@@ -14,8 +14,8 @@ export default (async function makeFont(argv) {
 	addTrivialGdef(hangul);
 
 	if (argv.italize) {
-		italize(kanji, 9.4);
-		italize(hangul, 9.4);
+		italize(kanji, 10);
+		italize(hangul, 10);
 	}
 
 	CliProc.mergeFonts(main, hangul, Ot.ListGlyphStoreFactory);
@@ -28,6 +28,24 @@ export default (async function makeFont(argv) {
 	dropGlyphNames(main);
 	simplifySingleSub(main.gsub, "vert");
 	simplifySingleSub(main.gsub, "vrt2");
+
+	if (argv.hint)
+		main.name.records.forEach(entry => {
+			entry.value = entry.value.toString();
+			switch (entry.nameID) {
+				case 1:
+				case 16:
+					entry.value = entry.value.replace(/^(.+)/i, "$1 H");
+					break;
+				case 3:
+				case 4:
+					entry.value = entry.value.replace(/^([a-z]+ [a-z]+ [a-z]+)/i, "$1 H");
+					break;
+				case 6:
+					entry.value = entry.value.replace(/^([a-z]+-[a-z]+-[a-z]+)/i, "$1-H");
+					break;
+			}
+		});
 
 	await writeFont(argv.o, main);
 });

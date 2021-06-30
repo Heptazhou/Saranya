@@ -8,8 +8,8 @@ export function setFontMetadata(font, fMono, selectorList, encodings, namings) {
 	font.os2.fsSelection |= Ot.Os2.FsSelection.USE_TYPO_METRICS;
 	font.os2.fsSelection &= ~Ot.Os2.FsSelection.WWS;
 
-	// clear achVendID
-	font.os2.achVendID = "????";
+	// Set achVendID
+	font.os2.achVendID = "ZHOU";
 
 	// Fix Inter's usWeightClass
 	font.os2.usWeightClass = 100 * Math.round(font.os2.usWeightClass / 100);
@@ -55,9 +55,15 @@ function nameFont(font, fMono, selectorList, encodings, namings) {
 		createNameTuple(recs, langID, ng.family, defaultNg.style, ng.style || defaultNg.style);
 		if (ng.copyright) recs.push(nameEntry(WIN, UNICODE, langID, COPYRIGHT, ng.copyright));
 		if (ng.version) recs.push(nameEntry(WIN, UNICODE, langID, VERSION, ng.version));
-		if (ng.manufacturer) recs.push(nameEntry(WIN, UNICODE, langID, MANUFACTURER, ng.copyright));
 		if (ng.trademark) recs.push(nameEntry(WIN, UNICODE, langID, TRADEMARK, ng.trademark));
+		if (ng.manufacturer)
+			recs.push(nameEntry(WIN, UNICODE, langID, MANUFACTURER, ng.manufacturer));
 		if (ng.designer) recs.push(nameEntry(WIN, UNICODE, langID, DESIGNER, ng.designer));
+		if (ng.description) recs.push(nameEntry(WIN, UNICODE, langID, DESCRIPTION, ng.description));
+		if (ng.manufacturer_url)
+			recs.push(nameEntry(WIN, UNICODE, langID, MANUFACTURER_URL, ng.manufacturer_url));
+		if (ng.license) recs.push(nameEntry(WIN, UNICODE, langID, LICENSE, ng.license));
+		if (ng.license_url) recs.push(nameEntry(WIN, UNICODE, langID, LICENSE_URL, ng.license_url));
 	}
 	font.name.records = recs;
 }
@@ -75,6 +81,10 @@ const POSTSCRIPT = 6;
 const TRADEMARK = 7;
 const MANUFACTURER = 8;
 const DESIGNER = 9;
+const DESCRIPTION = 10;
+const MANUFACTURER_URL = 11;
+const LICENSE = 13;
+const LICENSE_URL = 14;
 const PREFERRED_FAMILY = 16;
 const PREFERRED_STYLE = 17;
 const langIDMap = { en_US: 1033, zh_CN: 2052, zh_TW: 1028, zh_HK: 3076, ja_JP: 1041 };
@@ -87,7 +97,12 @@ function toPostscriptName(name) {
 }
 
 function compatibilityName(family, style) {
-	if (style === "Regular" || style === "Bold" || style === "Italic" || style === "Bold Italic") {
+	if (
+		style === "Regular" ||
+		style === "Regular Italic" ||
+		style === "Bold" ||
+		style === "Bold Italic"
+	) {
 		return { family, style, standardFour: true };
 	} else {
 		if (/^Extra/.test(style)) {
@@ -113,7 +128,7 @@ function createNameTuple(sink, langID, family, style, localizedStyle) {
 	sink.push(nameEntry(WIN, UNICODE, langID, FAMILY, compat.family));
 	const compatStyle = compat.standardFour ? localizedStyle : compat.style;
 	sink.push(nameEntry(WIN, UNICODE, langID, STYLE, compatStyle));
-	if (compatStyle === "Regular") {
+	if (compatStyle === "") {
 		sink.push(nameEntry(WIN, UNICODE, langID, FULL_NAME, `${compat.family}`));
 	} else {
 		sink.push(nameEntry(WIN, UNICODE, langID, FULL_NAME, `${compat.family} ${compatStyle}`));

@@ -25,6 +25,7 @@ async function pass(argv) {
 	const feMisc = await readFont(argv.feMisc);
 
 	if (main.head.unitsPerEm !== 1000) CliProc.rebaseFont(main, 1000);
+	main.head.fontRevision = packageConfig.version;
 
 	if (argv.tnum) bakeFeature("tnum", main, c => c >= 0x30 && c <= 0x39);
 	initVhea(main, as);
@@ -33,9 +34,9 @@ async function pass(argv) {
 	if (!argv.mono) dropCharacters(main, c => isEnclosedAlphanumerics(c) || isPua(c));
 
 	if (argv.italize) {
-		italize(as, +9.4);
-		italize(ws, +9.4);
-		italize(feMisc, +9.4);
+		italize(as, 10);
+		italize(ws, 10);
+		italize(feMisc, 10);
 	}
 
 	CliProc.mergeFonts(main, ws, Ot.ListGlyphStoreFactory);
@@ -52,6 +53,12 @@ async function pass(argv) {
 			en_US: {
 				copyright: globalConfig.copyright,
 				version: `Version ${packageConfig.version}`,
+				manufacturer: globalConfig.manufacturer,
+				manufacturer_url: globalConfig.manufacturer_url,
+				designer: globalConfig.designer,
+				description: globalConfig.description,
+				license: globalConfig.license,
+				license_url: globalConfig.license_url,
 				family: globalConfig.families[argv.family].naming.en_US + " " + argv.subfamily,
 				style: globalConfig.styles[argv.style].name
 			},

@@ -53,6 +53,11 @@ module.exports = async function (argv) {
 			en_US: {
 				copyright: globalConfig.copyright,
 				version: `Version ${packageConfig.version}`,
+				manufacturer: globalConfig.manufacturer,
+				manufacturer_url: globalConfig.manufacturer_url,
+				// description: globalConfig.description,
+				license: globalConfig.license,
+				license_url: globalConfig.license_url,
 				family: globalConfig.families[argv.family].naming.en_US + " " + argv.subfamily,
 				style: globalConfig.styles[argv.style].name
 			},

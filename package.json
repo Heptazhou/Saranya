@@ -1,5 +1,5 @@
 {
-	"name": "sarasa-gothic",
+	"name": "saranya-gothic",
 	"version": "0.32.10",
 	"main": "./run",
 	"scripts": {
@@ -13,12 +13,12 @@
 		"@chlorophytum/font-format-ttf": "^0.33.0",
 		"@chlorophytum/hint-store-provider-file": "^0.33.0",
 		"@chlorophytum/hm-combine": "^0.33.0",
+		"@chlorophytum/hm-ideograph": "^0.33.1",
 		"@chlorophytum/hm-select-glyphs": "^0.33.0",
-		"@chlorophytum/hm-ideograph": "^0.33.0",
+		"JSONStream": "^1.3.5",
 		"clone": "^2.1.2",
 		"colors": "^1.4.0",
-		"fs-extra": "^9.1.0",
-		"JSONStream": "^1.3.5",
+		"fs-extra": "^10.0.0",
 		"strip-bom-stream": "^4.0.0",
 		"temp": "^0.9.4",
 		"typo-geom": "^0.12.1",
@@ -26,9 +26,9 @@
 		"which": "^2.0.2"
 	},
 	"devDependencies": {
-		"eslint": "^7.22.0",
-		"eslint-config-prettier": "^8.1.0",
-		"prettier": "^2.2.1"
+		"eslint": "^7.30.0",
+		"eslint-config-prettier": "^8.3.0",
+		"prettier": "^2.3.2"
 	},
 	"engines": {
 		"node": ">=12.0.0"

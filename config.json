@@ -1,274 +1,175 @@
 {
-	"buildOptions":{},
-	"familyOrder": ["gothic", "ui", "mono", "mono-slab", "term", "term-slab", "fixed", "fixed-slab"],
+	"buildOptions": {},
+	"familyOrder": [
+		"ui",
+		"roman",
+		"mono",
+		"term"
+	],
 	"families": {
-		"gothic": {
-			"isTNUM": true,
-			"isGothic": true,
-			"latinGroup": "Inter",
+		"ui": {
+			"isPWID": true,
+			"latinGroup": "inter",
 			"naming": {
-				"en_US": "Sarasa Gothic",
-				"zh_CN": "更纱黑体",
-				"zh_TW": "更紗黑體",
-				"zh_HK": "更紗黑體",
-				"ja_JP": "更紗ゴシック",
-				"ko_KR": "사라사 고딕"
+				"en_US": "Saranya UI",
+				"zh_CN": "Saranya UI",
+				"zh_TW": "Saranya UI",
+				"ja_JP": "Saranya UI"
 			}
 		},
-		"ui": {
-			"isTNUM": true,
+		"roman": {
 			"isPWID": true,
-			"latinGroup": "Inter",
+			"isTNUM": true,
+			"latinGroup": "charis",
 			"naming": {
-				"en_US": "Sarasa UI",
-				"zh_CN": "更纱黑体 UI",
-				"zh_TW": "更紗黑體 UI",
-				"zh_HK": "更紗黑體 UI",
-				"ja_JP": "更紗ゴシック UI",
-				"ko_KR": "사라사 고딕 UI"
+				"en_US": "Saranya Roman",
+				"zh_CN": "Saranya Roman",
+				"zh_TW": "Saranya Roman",
+				"ja_JP": "Saranya Roman"
 			}
 		},
 		"mono": {
 			"isMono": true,
-			"latinGroup": "iosevka-n",
+			"isType": true,
+			"isGothic": true,
+			"latinGroup": "iosevnya",
 			"naming": {
-				"en_US": "Sarasa Mono",
-				"zh_CN": "等距更纱黑体",
-				"zh_TW": "等距更紗黑體",
-				"zh_HK": "等距更紗黑體",
-				"ja_JP": "更紗等幅ゴシック",
-				"ko_KR": "사라사 고정 폭고딕"
+				"en_US": "Saranya Mono",
+				"zh_CN": "Saranya Mono",
+				"zh_TW": "Saranya Mono",
+				"ja_JP": "Saranya Mono"
 			}
 		},
 		"term": {
 			"isMono": true,
 			"isTerm": true,
-			"latinGroup": "iosevka-n-term",
+			"latinGroup": "iosevnya-fixed",
 			"naming": {
-				"en_US": "Sarasa Term",
-				"zh_CN": "Sarasa Term",
-				"zh_TW": "Sarasa Term",
-				"zh_HK": "Sarasa Term",
-				"ja_JP": "Sarasa Term",
-				"ko_KR": "Sarasa Term"
-			}
-		},
-		"fixed": {
-			"isMono": true,
-			"isTerm": true,
-			"latinGroup": "iosevka-n-fixed",
-			"naming": {
-				"en_US": "Sarasa Fixed",
-				"zh_CN": "Sarasa Fixed",
-				"zh_TW": "Sarasa Fixed",
-				"zh_HK": "Sarasa Fixed",
-				"ja_JP": "Sarasa Fixed",
-				"ko_KR": "Sarasa Fixed"
-			}
-		},
-		"mono-slab": {
-			"isMono": true,
-			"latinGroup": "iosevka-n-slab",
-			"naming": {
-				"en_US": "Sarasa Mono Slab",
-				"zh_CN": "等距更纱黑体 Slab",
-				"zh_TW": "等距更紗黑體 Slab",
-				"zh_HK": "等距更紗黑體 Slab",
-				"ja_JP": "更紗等幅ゴシック Slab",
-				"ko_KR": "사라사 고정 폭고딕 Slab"
-			}
-		},
-		"term-slab": {
-			"isMono": true,
-			"latinGroup": "iosevka-n-term-slab",
-			"isTerm": true,
-			"naming": {
-				"en_US": "Sarasa Term Slab",
-				"zh_CN": "Sarasa Term Slab",
-				"zh_TW": "Sarasa Term Slab",
-				"zh_HK": "Sarasa Term Slab",
-				"ja_JP": "Sarasa Term Slab",
-				"ko_KR": "Sarasa Term Slab"
-			}
-		},
-		"fixed-slab": {
-			"isMono": true,
-			"latinGroup": "iosevka-n-fixed-slab",
-			"isTerm": true,
-			"naming": {
-				"en_US": "Sarasa Fixed Slab",
-				"zh_CN": "Sarasa Fixed Slab",
-				"zh_TW": "Sarasa Fixed Slab",
-				"zh_HK": "Sarasa Fixed Slab",
-				"ja_JP": "Sarasa Fixed Slab",
-				"ko_KR": "Sarasa Fixed Slab"
+				"en_US": "Saranya Term",
+				"zh_CN": "Saranya Term",
+				"zh_TW": "Saranya Term",
+				"ja_JP": "Saranya Term"
 			}
 		}
 	},
 	"styleOrder": [
-		"extralight",
-		"extralightitalic",
-		"light",
-		"lightitalic",
 		"regular",
-		"italic",
-		"semibold",
-		"semibolditalic",
+		"regularitalic",
 		"bold",
 		"bolditalic"
 	],
 	"latinGroups": {
-		"Inter": {
+		"charis": {
 			"isCff": false,
 			"styleToFileSuffixMap": {
-				"extralight": "ExtraLight",
-				"extralightitalic": "ExtraLightItalic",
-				"light": "Light",
-				"lightitalic": "LightItalic",
-				"regular": "Regular",
-				"italic": "Italic",
-				"semibold": "SemiBold",
-				"semibolditalic": "SemiBoldItalic",
-				"bold": "Bold",
-				"bolditalic": "BoldItalic"
+				"regular": "regular",
+				"regularitalic": "italic",
+				"bold": "bold",
+				"bolditalic": "bolditalic"
+			}
+		},
+		"inter": {
+			"isCff": false,
+			"styleToFileSuffixMap": {
+				"thin": "thin",
+				"thinitalic": "thinitalic",
+				"extralight": "extralight",
+				"extralightitalic": "extralightitalic",
+				"light": "light",
+				"lightitalic": "lightitalic",
+				"regular": "regular",
+				"regularitalic": "italic",
+				"medium": "medium",
+				"mediumitalic": "mediumitalic",
+				"semibold": "semibold",
+				"semibolditalic": "semibolditalic",
+				"bold": "bold",
+				"bolditalic": "bolditalic",
+				"extrabold": "extrabold",
+				"extrabolditalic": "extrabolditalic",
+				"black": "black",
+				"blackitalic": "blackitalic"
+			}
+		},
+		"iosevnya": {
+			"isCff": false,
+			"styleToFileSuffixMap": {
+				"regular": "regular",
+				"regularitalic": "regular-italic",
+				"bold": "bold",
+				"bolditalic": "bold-italic"
+			}
+		},
+		"iosevnya-fixed": {
+			"isCff": false,
+			"styleToFileSuffixMap": {
+				"regular": "regular",
+				"regularitalic": "regular-italic",
+				"bold": "bold",
+				"bolditalic": "bold-italic"
 			}
 		}
 	},
 	"styles": {
-		"extralight": {
-			"name": "Extralight"
-		},
-		"extralightitalic": {
-			"name": "Extralight Italic",
-			"uprightStyleMap": "extralight"
-		},
-		"light": {
-			"name": "Light"
-		},
-		"lightitalic": {
-			"name": "Light Italic",
-			"uprightStyleMap": "light"
-		},
-		"regular": {
-			"name": "Regular"
-		},
-		"italic": {
-			"name": "Italic",
-			"uprightStyleMap": "regular"
-		},
-		"semibold": {
-			"name": "Semibold"
-		},
-		"semibolditalic": {
-			"name": "Semibold Italic",
-			"uprightStyleMap": "semibold"
-		},
-		"bold": {
-			"name": "Bold"
-		},
-		"bolditalic": {
-			"name": "Bold Italic",
-			"uprightStyleMap": "bold"
-		}
+		"regular": { "name": "Regular" },
+		"regularitalic": { "name": "Regular Italic", "uprightStyleMap": "regular" },
+		"bold": { "name": "Bold" },
+		"bolditalic": { "name": "Bold Italic", "uprightStyleMap": "bold" }
 	},
-	"subfamilyOrder": ["cl", "sc", "tc", "hc", "j", "k"],
+	"subfamilyOrder": [
+		"sc",
+		"tc",
+		"ja"
+	],
 	"subfamilies": {
-		"cl": {
-			"name": "CL"
-		},
-		"sc": {
-			"name": "SC"
-		},
-		"tc": {
-			"name": "TC"
-		},
-		"hc": {
-			"name": "HC"
-		},
-		"j": {
-			"name": "J"
-		},
-		"k": {
-			"name": "K"
-		}
+		"sc": { "name": "SC" },
+		"tc": { "name": "TC" },
+		"ja": { "name": "JA" }
 	},
 	"os2encodings": {
-		"J": {
-			"gbk": false,
-			"big5": false,
-			"jis": true,
-			"korean": false
+		"JA": {
+			"gbk": true,
+			"big5": true,
+			"jis": true
 		},
 		"SC": {
 			"gbk": true,
-			"big5": false,
-			"jis": false,
-			"korean": false
+			"big5": true,
+			"jis": true
 		},
 		"TC": {
-			"gbk": false,
+			"gbk": true,
 			"big5": true,
-			"jis": false,
-			"korean": false
-		},
-		"HC": {
-			"gbk": false,
-			"big5": true,
-			"jis": false,
-			"korean": false
-		},
-		"CL": {
-			"gbk": false,
-			"big5": true,
-			"jis": false,
-			"korean": false
-		},
-		"K": {
-			"gbk": false,
-			"big5": false,
-			"jis": false,
-			"korean": true
+			"jis": true
 		}
 	},
 	"nameTupleSelector": {
-		"J": ["en_US", "ja_JP"],
-		"K": ["en_US", "ko_KR"],
+		"JA": ["en_US", "ja_JP"],
 		"SC": ["en_US", "zh_CN"],
-		"TC": ["en_US", "zh_TW"],
-		"HC": ["en_US", "zh_HK"],
-		"CL": ["en_US", "zh_TW"]
+		"TC": ["en_US", "zh_TW"]
 	},
-	"copyright": "Copyright (c) 2015-2023, Renzhi Li (aka. Belleve Invis, belleve@typeof.net). Portions Copyright (c) 2016-2020 The Inter Project Authors. Portions Copyright (c) 2014, 2015 Adobe Systems Incorporated (http://www.adobe.com/). Portions Copyright (c) 2012 Google Inc.",
+	"copyright": "Copyright 2015-2022 Belleve Invis (belleve@typeof.net). Portions Copyright 1997-2022 SIL International (https://www.sil.org/). Portions Copyright 2014-2021 Adobe (https://www.adobe.com/). Portions Copyright 2020 The Inter Project Authors. Portions Copyright 2022-2023 Advocate Ancient Fonts. Portions Copyright 2021-2023 Heptazhou (zhou@0h7z.com), with Reserved Font Name \"Saranya\".",
+	"manufacturer": "Heptazhou",
+	"manufacturer_url": "https://github.com/Heptazhou/Saranya",
+	"designer": "Ryoko Nishizuka 西塚涼子 (Kana, Bopomofo, & Ideographs); Walt Agee, Miriam Martin, Annie Olsen, Victor Gaultney, Lorna Priest, Alan Ward, Bob Hallissy, Martin Hosken, Sharon Correll, Jon Coblentz, Jonathan Kew, David Raymond (Latin, Cyrillic, & Greek); Belleve Invis (Latin, Greek, & Cyrillic)",
+	"description": "\"Sara\" means Saratoga (CV-3); \"nya\" means meow.",
+	"license": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.",
+	"license_url": "https://scripts.sil.org/OFL",
 	"shsSourceMap": {
-		"defaultRegion": "SourceHanSans",
+		"defaultName": "SourceHanSans",
 		"region": {
-			"j": "SourceHanSans",
-			"k": "SourceHanSansK",
-			"cl": "SourceHanSansK",
+			"ja": "SourceHanSans",
 			"sc": "SourceHanSansSC",
-			"tc": "SourceHanSansTC",
-			"hc": "SourceHanSansHC",
-			"j-hw": "SourceHanSansHW",
-			"k-hw": "SourceHanSansHWK",
-			"cl-hw": "SourceHanSansHWK",
-			"sc-hw": "SourceHanSansHWSC",
-			"tc-hw": "SourceHanSansHWTC",
-			"hc-hw": "SourceHanSansHWHC"
+			"tc": "SourceHanSansK"
 		},
 		"style": {
-			"extralight": "ExtraLight",
-			"light": "Light",
 			"regular": "Regular",
-			"semibold": "Medium",
 			"bold": "Bold"
 		},
-		"classicalRegion": "cl",
-		"classicalOverridePrefix":"AdvocateAncientSansTC",
+		"classicalRegion": ["cl", "tc"],
+		"classicalOverridePrefix": "AdvocateAncientSansTC",
 		"classicalOverrideSuffix": {
-			"extralight": "ExtraLight-subset",
-			"light": "Light-subset",
 			"regular": "Regular-subset",
-			"semibold": "Medium-subset",
 			"bold": "Bold-subset"
 		}
 	}

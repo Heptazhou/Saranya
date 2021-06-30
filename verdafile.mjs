@@ -12,9 +12,9 @@ const { run, node, rm, cd, mv, cp } = build.actions;
 const { FileList } = build.predefinedFuncs;
 
 // Directories
-const PREFIX = `sarasa`;
+const PREFIX = `saranya`;
 const BUILD = `.build`;
-const OUT = `out`;
+const OUT = `dist`;
 const SOURCES = `sources`;
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
@@ -80,7 +80,7 @@ const Version = oracle("oracles::version", async t => {
 });
 
 const TtcArchive = file.make(
-	(infix, version) => `${OUT}/sarasa-gothic-${infix}-${version}.7z`,
+	(infix, version) => `${OUT}/${PREFIX}-${infix}-${version}.7z`,
 	async (t, out, infix) => {
 		await t.need(TtcFontFiles(infix));
 		await rm(out.full);
@@ -89,7 +89,7 @@ const TtcArchive = file.make(
 );
 
 const TtfArchive = file.make(
-	(infix, version) => `${OUT}/sarasa-gothic-${infix}-${version}.7z`,
+	(infix, version) => `${OUT}/${PREFIX}-${infix}-${version}.7z`,
 	async (t, out, infix) => {
 		const [config] = await t.need(Config, TtfFontFiles(infix));
 		await rm(out.full);
@@ -124,7 +124,7 @@ const BreakShsTtc = task.make(
 		const shsSourceMap = config.shsSourceMap;
 		await run(
 			OTC2OTF,
-			`${SOURCES}/shs/${shsSourceMap.defaultRegion}-${shsSourceMap.style[weight]}.ttc`
+			`${SOURCES}/shs/${shsSourceMap.defaultName}-${shsSourceMap.style[weight]}.ttc`
 		);
 		for (const regionID in shsSourceMap.region) {
 			const region = shsSourceMap.region[regionID];
@@ -150,7 +150,7 @@ const ShsTtf = file.make(
 	}
 );
 
-const ShsCassicalOverrideTtf = file.make(
+const ShsClassicalOverrideTtf = file.make(
 	weight => `${BUILD}/shs-classical-override/${weight}.ttf`,
 	async (t, out, weight) => {
 		const [config] = await t.need(Config, Scripts);
@@ -310,9 +310,9 @@ const Pass1Hinted = file.make(
 );
 
 const Prod = file.make(
-	(family, region, style) => `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) => `${OUT}/ttf-hinted/${PREFIX}-${family}-${region}-h-${style}.ttf`,
 	(t, out, family, region, style) =>
-		MakeProd(t, out, family, region, style, {
+		MakeProd(t, out, family, region, style, true, {
 			Pass1: HfoPass1,
 			Kanji: HfoKanji,
 			Hangul: HfoHangul
@@ -320,16 +320,16 @@ const Prod = file.make(
 );
 
 const ProdUnhinted = file.make(
-	(family, region, style) => `${OUT}/ttf-unhinted/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) => `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
 	(t, out, family, region, style) =>
-		MakeProd(t, out, family, region, style, {
+		MakeProd(t, out, family, region, style, false, {
 			Pass1: (w, f, r, s) => Pass1(f, r, s),
 			Kanji: (w, r, s) => Kanji0(r, s),
 			Hangul: (w, r, s) => Hangul0(r, s)
 		})
 );
 
-async function MakeProd(t, out, family, region, style, fragT) {
+async function MakeProd(t, out, family, region, style, fHint, fragT) {
 	const [config] = await t.need(Config, Scripts, Version, de(out.dir));
 	const weight = deItalizedNameOf(config, style);
 	const [, $1, $2, $3] = await t.need(
@@ -344,7 +344,8 @@ async function MakeProd(t, out, family, region, style, fragT) {
 		kanji: $2.full,
 		hangul: $3.full,
 		o: tmpOTD,
-		italize: weight === style ? false : true
+		italize: weight === style ? false : true,
+		hint: fHint
 	});
 	await OtfccBuildOptimize(config, tmpOTD, out.full);
 }
@@ -517,14 +518,16 @@ function* InstrParams(toDir, otds) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // TTC building
 const TtcFile = file.make(
-	(infix, style) => `${OUT}/${infix}/${PREFIX}-${style}.ttc`,
-	async (t, out, infix, style) => {
+	infix => (/unhinted/.test(infix) ? `${OUT}/ttc/${PREFIX}.ttc` : `${OUT}/ttc/${PREFIX}-h.ttc`),
+	async (t, out, infix) => {
 		const prodT = /unhinted/.test(infix) ? ProdUnhinted : Prod;
 		const [config] = await t.need(Config, de(out.dir));
 		let requirements = [];
-		for (let family of config.familyOrder) {
-			for (let region of config.subfamilyOrder) {
-				requirements.push(prodT(family, region, style));
+		for (let region of config.subfamilyOrder) {
+			for (let family of config.familyOrder) {
+				for (let weight of config.styleOrder) {
+					requirements.push(prodT(family, region, weight));
+				}
 			}
 		}
 		const [$$] = await t.need(requirements);
@@ -534,10 +537,7 @@ const TtcFile = file.make(
 
 const TtcFontFiles = task.make(
 	infix => `intermediate::ttcFontFiles::${infix}`,
-	async (t, infix) => {
-		const [config] = await t.need(Config);
-		await t.need(config.styleOrder.map(st => TtcFile(infix, st)));
-	}
+	async (t, infix) => await t.need(TtcFile(infix))
 );
 
 const TtfFontFiles = task.make(

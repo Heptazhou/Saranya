@@ -1,6 +1,16 @@
+
+dist/
+sources/shs/*.otf
+.build/*/*.otf
+.build/*/*.ttf
+*.gz
+*.otd
+.verda-build-journal
+build.quiet.cmd
+
 bin/
 build/
-.build/
+# .build/
 node_modules/
 references/
 doc/
@@ -11,7 +21,7 @@ preview/test-fonts
 *.zip
 *.tgz
 *.log
-*.exe
+# *.exe
 *.aux
 *.fls
 *.toc

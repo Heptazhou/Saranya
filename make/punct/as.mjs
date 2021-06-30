@@ -3,7 +3,7 @@ import gc from "../common/gc.mjs";
 import introFont from "../common/intro-font.mjs";
 import {
 	isWestern,
-	isWS,
+	isWesternSymbol,
 	isLongDash,
 	filterUnicodeRange,
 	isFEMisc
@@ -72,13 +72,17 @@ export default (async function makeFont(argv) {
 	main.cmap_uvs = null;
 	filterUnicodeRange(
 		main,
-		c => !isWestern(c - 0) && !isLongDash(c - 0, argv.term) && !isWS(c - 0) && !isFEMisc(c - 0)
+		c =>
+			!isWestern(c - 0, argv.term) &&
+			!isLongDash(c - 0, argv.term) &&
+			!isWesternSymbol(c - 0, argv.term) &&
+			!isFEMisc(c - 0, argv.term)
 	);
 	if (argv.pwid) toPWID(main);
 	if (argv.mono) {
 		unlinkRefsOfSymbols(lgc, argv.term);
-		transferMonoGeometry(main, lgc);
-		populatePwidOfMono(main);
+		transferMonoGeometry(main, lgc, argv.term);
+		populatePwidOfMono(main, argv.term);
 	}
 	if (!argv.pwid) sanitizeSymbols(main, argv.goth, !argv.pwid && !argv.term);
 	if (argv.mono) removeDashCcmp(main, argv.mono);

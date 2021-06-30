@@ -82,7 +82,23 @@ function scaleGposPair(subtable, scale) {
 	}
 }
 export default (function (font, options) {
-	const { scale } = options;
+	const { scale, version } = options;
+	const scale_lineGap = 0;
+	if (font.head) {
+		font.head.fontRevision = version;
+	}
+	if (font.hhea) {
+		font.hhea.lineGap *= scale_lineGap;
+	}
+	if (font.OS_2) {
+		font.OS_2.sTypoLineGap *= scale_lineGap;
+		font.OS_2.usWinAscent = font.OS_2.sTypoAscender;
+		font.OS_2.usWinDescent = -font.OS_2.sTypoDescender;
+	}
+	if (font.hhea && font.OS_2) {
+		font.hhea.ascender = font.OS_2.sTypoAscender;
+		font.hhea.descender = font.OS_2.sTypoDescender;
+	}
 	if (scale === 1) return;
 	for (const gid in font.glyf) {
 		scaleGlyph(font.glyf[gid], scale);
@@ -92,7 +108,7 @@ export default (function (font, options) {
 	if (font.hhea) {
 		font.hhea.ascender *= scale;
 		font.hhea.descender *= scale;
-		font.hhea.lineGap *= scale;
+		// font.hhea.lineGap *= scale;
 	}
 	if (font.OS_2) {
 		font.OS_2.xAvgCharWidth *= scale;
@@ -100,7 +116,7 @@ export default (function (font, options) {
 		font.OS_2.usWinDescent *= scale;
 		font.OS_2.sTypoAscender *= scale;
 		font.OS_2.sTypoDescender *= scale;
-		font.OS_2.sTypoLineGap *= scale;
+		// font.OS_2.sTypoLineGap *= scale;
 		font.OS_2.sxHeight *= scale;
 		font.OS_2.sCapHeight *= scale;
 		font.OS_2.ySubscriptXSize *= scale;

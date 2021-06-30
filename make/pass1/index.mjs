@@ -27,7 +27,7 @@ export default (async function (argv) {
 	const ws = await introFont({ from: argv.ws, prefix: "c", ignoreHints: true });
 	const feMisc = await introFont({ from: argv.feMisc, prefix: "d", ignoreHints: true });
 
-	rebaseFont(main, { scale: 1000 / main.head.unitsPerEm });
+	rebaseFont(main, { scale: 1000 / main.head.unitsPerEm, version: packageConfig.version });
 
 	// tnum
 	if (argv.tnum) toTNUM(main);
@@ -38,7 +38,7 @@ export default (async function (argv) {
 		main.glyf[g].advanceHeight = main.head.unitsPerEm;
 	}
 
-	if (argv.italize) italize(main, -9.4);
+	if (argv.italize) italize(main, -10);
 
 	knockoutSymbols(main, { enclosedAlphaNumerics: !argv.mono, pua: !argv.mono });
 	crossTransfer(main, as, [0x2010, 0x2011, 0x2012, 0x2013, 0x2014, 0x2015]);
@@ -59,6 +59,12 @@ export default (async function (argv) {
 			en_US: {
 				copyright: globalConfig.copyright,
 				version: `Version ${packageConfig.version}`,
+				manufacturer: globalConfig.manufacturer,
+				manufacturer_url: globalConfig.manufacturer_url,
+				designer: globalConfig.designer,
+				description: globalConfig.description,
+				license: globalConfig.license,
+				license_url: globalConfig.license_url,
 				family: globalConfig.families[argv.family].naming.en_US + " " + argv.subfamily,
 				style: globalConfig.styles[argv.style].name
 			},
@@ -81,7 +87,7 @@ export default (async function (argv) {
 		}
 	);
 
-	if (argv.italize) italize(main, +9.4);
+	if (argv.italize) italize(main, +10);
 
 	main.glyph_order = gc(main);
 	await buildFont(main, { to: argv.o });

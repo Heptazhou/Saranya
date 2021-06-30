@@ -90,16 +90,16 @@ sanitizers.halfCompH = HalfCompN(1, false, true);
 sanitizers.halfComp2 = HalfCompN(2);
 sanitizers.halfComp3 = HalfCompN(3);
 const sanitizerTypes = {
-	"“": "halfRight",
-	"‘": "halfRight",
-	"’": "halfLeft",
-	"”": "halfLeft",
 	"\u2010": "halfCompH",
 	"\u2011": "halfCompH",
 	"\u2012": "halfCompH",
 	"\u2013": "halfCompH",
 	"\u2014": "halfComp",
 	"\u2015": "halfComp",
+	"\u2018": "halfRight", // ‘
+	"\u2019": "halfLeft", /// ’
+	"\u201c": "halfRight", // “
+	"\u201d": "halfLeft", /// ”
 	"\u2025": "ellipsis",
 	"\u2026": "ellipsis",
 	"\u2e3a": "halfComp2",

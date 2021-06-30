@@ -6,29 +6,29 @@ export const isIdeograph = function (c) {
 		(c >= 0x3400 && c <= 0x4dbf) || // ExtA
 		(c >= 0x4e00 && c <= 0x9fff) || // URO
 		(c >= 0xf900 && c <= 0xfa6f) || // CJK compatibility ideographs
-		(c >= 0x20000 && c <= 0x3ffff) // SIP, TIP
+		(c >= 0x20000 && c <= 0x3ffff) /// SIP, TIP
 	);
 };
-export const isWestern = c => c < 0x2000 || (c >= 0x2070 && c <= 0x218f);
+export const isWestern = (c, isTerm) =>
+	(c < 0x2000 && (c != 0x00a9 || isTerm)) || (c >= 0x2070 && c <= 0x218f);
 export const isKorean = c =>
 	(c >= 0x1100 && c <= 0x11ff) ||
-	(c >= 0xac00 && c <= 0xd7af) ||
 	(c >= 0x3130 && c <= 0x318f) ||
 	(c >= 0x3200 && c <= 0x321e) ||
-	(c >= 0xffa1 && c <= 0xffdc) ||
 	(c >= 0x3260 && c <= 0x327f) ||
 	(c >= 0xa960 && c <= 0xa97f) ||
-	(c >= 0xd7b0 && c <= 0xd7ff);
+	(c >= 0xac00 && c <= 0xd7af) ||
+	(c >= 0xd7b0 && c <= 0xd7ff) ||
+	(c >= 0xffa1 && c <= 0xffdc);
 export const isFEMisc = c =>
 	(c >= 0x3003 && c <= 0x3007) ||
 	(c >= 0x3012 && c <= 0x3013) ||
 	(c >= 0x3020 && c <= 0x33ff) ||
 	(c >= 0x1aff0 && c <= 0x1b12f) ||
 	(c >= 0x1f000 && c <= 0x1f2ff);
-export const isWS = function (c) {
+export const isWesternSymbol = function (c) {
 	return (
-		((c >= 0x2000 && c <= 0x200f) || (c >= 0x20a0 && c < 0x3000)) &&
-		!(c >= 0x2e3a && c <= 0x2e3b)
+		(c >= 0x2000 && c <= 0x200f) || (c >= 0x20a0 && c < 0x2e3a) || (c > 0x2e3b && c < 0x3000)
 	);
 };
 export const isLongDash = function (c, isTerm) {

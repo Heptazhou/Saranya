@@ -48,7 +48,7 @@ export function loadFont(sourceFile, options) {
 	return JsonUtil.parseJsonObjectFromStream(getStream(sourceFile, options));
 }
 
-export const buildFont = async function builFont(font, destination, options) {
+export const buildFont = async function buildFont(font, destination, options) {
 	if (destination === "|") {
 		if (process.stdout.setEncoding instanceof Function) process.stdout.setEncoding("utf8");
 		await JsonUtil.fontJsonStringifyToStream(font, process.stdout, true);

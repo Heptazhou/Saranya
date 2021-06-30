@@ -139,7 +139,7 @@ function rankFromUnicode(c) {
 		(c >= 0x2e80 && c <= 0x2fff) || // CJK radicals
 		(c >= 0x3192 && c <= 0x319f) || // Ideographic annotation
 		(c >= 0x31c0 && c <= 0x31ef) || // CJK strokes
-		(c >= 0xf900 && c <= 0xfa6f) // CJK compatibility ideographs
+		(c >= 0xf900 && c <= 0xfa6f) // // CJK compatibility ideographs
 	) {
 		return RANK_UNICODE_ALIASED | c;
 	}

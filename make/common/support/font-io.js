@@ -40,7 +40,7 @@ function getStream(sourcefile, options) {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-exports.buildFont = async function builFont(font, destination, options) {
+exports.buildFont = async function buildFont(font, destination, options) {
 	if (destination === "|") {
 		if (process.stdout.setEncoding instanceof Function) process.stdout.setEncoding("utf8");
 		await JsonUtil.fontJsonStringifyToStream(font, process.stdout, true);

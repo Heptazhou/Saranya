@@ -23,6 +23,10 @@ const POSTSCRIPT = 6;
 const TRADEMARK = 7;
 const MANUFACTURER = 8;
 const DESIGNER = 9;
+const DESCRIPTION = 10;
+const MANUFACTURER_URL = 11;
+const LICENSE = 13;
+const LICENSE_URL = 14;
 const PREFERRED_FAMILY = 16;
 const PREFERRED_STYLE = 17;
 function convPostscript(name) {
@@ -30,7 +34,12 @@ function convPostscript(name) {
 }
 
 function compatibilityName(family, style) {
-	if (style === "Regular" || style === "Bold" || style === "Italic" || style === "Bold Italic") {
+	if (
+		style === "Regular" ||
+		style === "Regular Italic" ||
+		style === "Bold" ||
+		style === "Bold Italic"
+	) {
 		return { family, style, standardFour: true };
 	} else {
 		if (/^Extra/.test(style)) {
@@ -64,7 +73,7 @@ function createNameTuple(nameTable, langID, family, style, localizedStyle) {
 	nameTable.push(nameEntry(WINDOWS, UNICODE, langID, FAMILY, compat.family));
 	const compatStyle = compat.standardFour ? localizedStyle : compat.style;
 	nameTable.push(nameEntry(WINDOWS, UNICODE, langID, STYLE, compatStyle));
-	if (compatStyle === "Regular") {
+	if (compatStyle === "") {
 		nameTable.push(nameEntry(WINDOWS, UNICODE, langID, FULL_NAME, `${compat.family}`));
 	} else {
 		nameTable.push(
@@ -91,19 +100,28 @@ function nameFont(font, fMono, selectorList, encodings, namings) {
 		if (ng.copyright)
 			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, COPYRIGHT, ng.copyright));
 		if (ng.version) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, VERSION, ng.version));
-		if (ng.manufacturer)
-			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER, ng.copyright));
 		if (ng.trademark)
 			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, TRADEMARK, ng.trademark));
+		if (ng.manufacturer)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER, ng.manufacturer));
 		if (ng.designer) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, DESIGNER, ng.designer));
+		if (ng.description)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, DESCRIPTION, ng.description));
+		if (ng.manufacturer_url)
+			nameTable.push(
+				nameEntry(WINDOWS, UNICODE, langID, MANUFACTURER_URL, ng.manufacturer_url)
+			);
+		if (ng.license) nameTable.push(nameEntry(WINDOWS, UNICODE, langID, LICENSE, ng.license));
+		if (ng.license_url)
+			nameTable.push(nameEntry(WINDOWS, UNICODE, langID, LICENSE_URL, ng.license_url));
 	}
 	font.name = nameTable;
 
 	// Set fsSelection
 	font.OS_2.fsSelection.useTypoMetrics = true;
 	font.OS_2.fsSelection.wws = false;
-	// clear achVendID
-	font.OS_2.achVendID = "????";
+	// Set achVendID
+	font.OS_2.achVendID = "ZHOU";
 	// Set encodings
 	font.OS_2.ulCodePageRange1 = {
 		...font.OS_2.ulCodePageRange1,

@@ -1,0 +1,5 @@
+
+*.cmd text eol=crlf
+*.json linguist-detectable
+*.jsonc linguist-detectable
+/make/*/*/** linguist-vendored

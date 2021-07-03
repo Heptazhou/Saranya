@@ -1,0 +1,2 @@
+https://github.com/adobe-fonts/source-han-sans/releases/latest/download/SourceHanSansOTC.zip
+https://github.com/adobe-fonts/source-han-sans/tree/release/OTC

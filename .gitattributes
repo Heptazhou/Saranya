@@ -1,0 +1,6 @@
+
+*.cmd text eol=crlf
+*.js linguist-vendored
+*.mjs linguist-vendored
+config.json linguist-detectable
+verdafile.mjs -linguist-vendored

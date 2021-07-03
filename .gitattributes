@@ -1,0 +1,3 @@
+
+*.json linguist-detectable
+/make/*/*/** linguist-vendored

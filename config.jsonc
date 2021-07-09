@@ -131,12 +131,14 @@
 		// "extralightitalic",
 		// "light",
 		// "lightitalic",
-		"regular",
-		"italic"
+		// "regular",
+		// "italic",
 		// "semibold",
 		// "semibolditalic",
 		// "bold",
 		// "bolditalic"
+		"regular",
+		"regularitalic"
 	],
 	"latinGroups": {
 		"inter": {
@@ -153,13 +155,13 @@
 				// "bold": "Bold",
 				// "bolditalic": "BoldItalic"
 				"regular": "regular",
-				"italic": "italic"
+				"regularitalic": "italic"
 			}
 		},
 		"iosevnya": {
 			"styleToFileSuffixMap": {
 				"regular": "regular",
-				"italic": "regular-italic"
+				"regularitalic": "regular-italic"
 			}
 		}
 	},
@@ -168,12 +170,14 @@
 		// "extralightitalic": { "name": "Extralight Italic", "uprightStyleMap": "extralight" },
 		// "light": { "name": "Light" },
 		// "lightitalic": { "name": "Light Italic", "uprightStyleMap": "light" },
-		"regular": { "name": "Regular" },
-		"italic": { "name": "Italic", "uprightStyleMap": "regular" }
+		// "regular": { "name": "Regular" },
+		// "italic": { "name": "Italic", "uprightStyleMap": "regular" },
 		// "semibold": { "name": "Semibold" },
 		// "semibolditalic": { "name": "Semibold Italic", "uprightStyleMap": "semibold" },
 		// "bold": { "name": "Bold" },
 		// "bolditalic": { "name": "Bold Italic", "uprightStyleMap": "bold" }
+		"regular": { "name": "Regular" },
+		"regularitalic": { "name": "Regular Italic", "uprightStyleMap": "regular" }
 	},
 	"subfamilyOrder": [
 		// "cl",

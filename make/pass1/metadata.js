@@ -34,7 +34,12 @@ function convPostscript(name) {
 }
 
 function compatibilityName(family, style) {
-	if (style === "Regular" || style === "Bold" || style === "Italic" || style === "Bold Italic") {
+	if (
+		style === "Regular" ||
+		style === "Regular Italic" ||
+		style === "Bold" ||
+		style === "Bold Italic"
+	) {
 		return { family, style, standardFour: true };
 	} else {
 		if (/^Extra/.test(style)) {
@@ -68,7 +73,7 @@ function createNameTuple(nameTable, langID, family, style, localizedStyle) {
 	nameTable.push(nameEntry(WINDOWS, UNICODE, langID, FAMILY, compat.family));
 	const compatStyle = compat.standardFour ? localizedStyle : compat.style;
 	nameTable.push(nameEntry(WINDOWS, UNICODE, langID, STYLE, compatStyle));
-	if (compatStyle === "Regular") {
+	if (false) {
 		nameTable.push(nameEntry(WINDOWS, UNICODE, langID, FULL_NAME, `${compat.family}`));
 	} else {
 		nameTable.push(

@@ -15,25 +15,25 @@
 			}
 		}
 	},
-	"styleOrder": ["regular", "italic"],
+	"styleOrder": ["regular", "regularitalic"],
 	"latinGroups": {
 		"inter": {
 			"isCff": true,
 			"styleToFileSuffixMap": {
 				"regular": "regular",
-				"italic": "italic"
+				"regularitalic": "italic"
 			}
 		},
 		"iosevnya": {
 			"styleToFileSuffixMap": {
 				"regular": "regular",
-				"italic": "regular-italic"
+				"regularitalic": "regular-italic"
 			}
 		}
 	},
 	"styles": {
 		"regular": { "name": "Regular" },
-		"italic": { "name": "Italic", "uprightStyleMap": "regular" }
+		"regularitalic": { "name": "Regular Italic", "uprightStyleMap": "regular" }
 	},
 	"subfamilyOrder": ["sc", "tc", "ja"],
 	"subfamilies": {

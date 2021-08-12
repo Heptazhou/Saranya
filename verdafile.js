@@ -35,7 +35,7 @@ module.exports = build;
 const Start = phony("all", async t => {
 	const version = await t.need(Version);
 	await t.need(TtfFontFiles`ttf`, TtfFontFiles`ttf-unhinted`);
-	await t.need(TtcFontFiles`ttc`);
+	await t.need(TtcFontFiles`ttc`, TtcFontFiles`ttc-unhinted`);
 	await t.need(
 		TtcArchive(`ttc`, version),
 		TtfArchive(`ttf`, version),
@@ -45,7 +45,7 @@ const Start = phony("all", async t => {
 
 const Ttc = phony(`ttc`, async t => {
 	await t.need(TtfFontFiles`ttf`, TtfFontFiles`ttf-unhinted`);
-	await t.need(TtcFontFiles`ttc`);
+	await t.need(TtcFontFiles`ttc`, TtcFontFiles`ttc-unhinted`);
 });
 
 const Ttf = phony(`ttf`, async t => {
@@ -289,9 +289,9 @@ const Hangul0 = file.make(
 );
 
 const Prod = file.make(
-	(family, region, style) => `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) => `${OUT}/ttf-hinted/${PREFIX}-${family}-${region}-h-${style}.ttf`,
 	(t, out, family, region, style) =>
-		MakeProd(t, out, family, region, style, {
+		MakeProd(t, out, family, region, style, true, {
 			Pass1: HfoPass1,
 			Kanji: HfoKanji,
 			Hangul: HfoHangul
@@ -299,16 +299,16 @@ const Prod = file.make(
 );
 
 const ProdUnhinted = file.make(
-	(family, region, style) => `${OUT}/ttf-unhinted/${PREFIX}-${family}-${region}-${style}.ttf`,
+	(family, region, style) => `${OUT}/ttf/${PREFIX}-${family}-${region}-${style}.ttf`,
 	(t, out, family, region, style) =>
-		MakeProd(t, out, family, region, style, {
+		MakeProd(t, out, family, region, style, false, {
 			Pass1: (w, f, r, s) => Pass1(f, r, s),
 			Kanji: (w, r, s) => Kanji0(r, s),
 			Hangul: (w, r, s) => Hangul0(r, s)
 		})
 );
 
-async function MakeProd(t, out, family, region, style, fragT) {
+async function MakeProd(t, out, family, region, style, fHint, fragT) {
 	const [config] = await t.need(Config, Scripts, Version, de(out.dir));
 	const weight = deItalizedNameOf(config, style);
 	const [, $1, $2, $3] = await t.need(
@@ -323,7 +323,8 @@ async function MakeProd(t, out, family, region, style, fragT) {
 		kanji: $2.full,
 		hangul: $3.full,
 		o: tmpOTD,
-		italize: weight === style ? false : true
+		italize: weight === style ? false : true,
+		hint: fHint
 	});
 	await OtfccBuildOptimize(config, tmpOTD, out.full);
 }
@@ -496,7 +497,7 @@ function* InstrParams(toDir, otds) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // TTC building
 const TtcFile = file.make(
-	infix => `${OUT}/${infix}/${PREFIX}.ttc`,
+	infix => (/unhinted/.test(infix) ? `${OUT}/ttc/${PREFIX}.ttc` : `${OUT}/ttc/${PREFIX}-h.ttc`),
 	async (t, out, infix) => {
 		const prodT = /unhinted/.test(infix) ? ProdUnhinted : Prod;
 		const [config] = await t.need(Config, de(out.dir));

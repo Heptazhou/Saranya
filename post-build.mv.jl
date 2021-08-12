@@ -9,8 +9,8 @@ end
 
 try
 	@info "正在重命名"
-	cd(rename, "dist/ttf-unhinted/")
 	cd(rename, "dist/ttf/")
+	cd(rename, "dist/ttf-hinted/")
 	@info "完成"
 catch e
 	@info "错误"

@@ -10,7 +10,7 @@ specifiers:
   JSONStream: ^1.3.5
   clone: ^2.1.2
   colors: ^1.4.0
-  eslint: ^7.31.0
+  eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
   fs-extra: ^10.0.0
   prettier: ^2.3.2
@@ -38,8 +38,8 @@ dependencies:
   which: 2.0.2
 
 devDependencies:
-  eslint: 7.31.0
-  eslint-config-prettier: 8.3.0_eslint@7.31.0
+  eslint: 7.32.0
+  eslint-config-prettier: 8.3.0_eslint@7.32.0
   prettier: 2.3.2
 
 packages:
@@ -50,8 +50,8 @@ packages:
       '@babel/highlight': 7.14.5
     dev: true
 
-  /@babel/helper-validator-identifier/7.14.8:
-    resolution: {integrity: sha512-ZGy6/XQjllhYQrNw/3zfWRwZCTVSiBLZ9DHVZxn9n2gip/7ab8mv2TWlKPIBk26RwedCBoWdjLmn+t9na2Gcow==}
+  /@babel/helper-validator-identifier/7.14.9:
+    resolution: {integrity: sha512-pQYxPY0UP6IHISRitNe8bsijHex4TWZXi2HwKVsjPiltzlhse2znVcm9Ace510VT1kxIHjGJCZZQBX2gJDbo0g==}
     engines: {node: '>=6.9.0'}
     dev: true
 
@@ -59,7 +59,7 @@ packages:
     resolution: {integrity: sha512-qf9u2WFWVV0MppaL877j2dBtQIDgmidgjGk5VIMw3OadXvYaXn66U1BFlH2t4+t3i+8PhedppRv+i40ABzd+gg==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-validator-identifier': 7.14.8
+      '@babel/helper-validator-identifier': 7.14.9
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
@@ -67,7 +67,7 @@ packages:
   /@chlorophytum/arch/0.33.0:
     resolution: {integrity: sha512-1gB84CP4Ca2Szu3i5nV6DY3ytqUjeC9I6Qf4sjFiG0xnSfMlBGQ12yfXWC1WhXx2xNZqkd3ul9RJwgYJyiob9g==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
       typable: 1.0.3
     dev: false
 
@@ -78,7 +78,7 @@ packages:
       '@chlorophytum/hint-store-memory': 0.33.0
       '@chlorophytum/util-json': 0.33.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/cli/0.33.0:
@@ -92,7 +92,7 @@ packages:
       commander: 4.1.1
       json5: 2.2.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/final-hint-format-hltt/0.33.0:
@@ -106,7 +106,7 @@ packages:
       '@chlorophytum/hltt-next-stmt': 0.33.0
       '@chlorophytum/hltt-next-tr': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
       typable: 1.0.3
     dev: false
 
@@ -122,14 +122,14 @@ packages:
       '@chlorophytum/util-json': 0.33.0
       fs-extra: 9.1.0
       ot-builder: 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/font-opentype/0.33.0:
     resolution: {integrity: sha512-9F7yzJRwGZ5MC/VSTSqF85uj1RZArYEB/6Sy3ss9hMaSRyBWpgWVYN4YpaxIrG6fj1Vg13kBrb9ZDuQZz+hfxw==}
     dependencies:
       '@chlorophytum/arch': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hint-common/0.33.0:
@@ -140,7 +140,7 @@ packages:
       '@chlorophytum/hltt-next': 0.33.0
       '@chlorophytum/hltt-next-expr': 0.33.0
       '@chlorophytum/hltt-next-stmt': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
       typable: 1.0.3
     dev: false
 
@@ -154,7 +154,7 @@ packages:
       '@chlorophytum/hltt-next-expr': 0.33.0
       '@chlorophytum/hltt-next-stmt': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
       typable: 1.0.3
     dev: false
 
@@ -170,7 +170,7 @@ packages:
       '@chlorophytum/hltt-next-stmt': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hint-programs-stoke-adjust/0.33.0:
@@ -181,14 +181,14 @@ packages:
       '@chlorophytum/hltt-next-expr': 0.33.0
       '@chlorophytum/hltt-next-stmt': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hint-store-memory/0.33.0:
     resolution: {integrity: sha512-hc6c8evcloAtGS+dvYp3IcsgQHnxqkuTviN+eyF2ja/LXbO27vPeFAvhS6IMjVKuXoJjGTMiWhrSSCn0x/NPCQ==}
     dependencies:
       '@chlorophytum/arch': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hint-store-provider-file/0.33.0:
@@ -197,13 +197,13 @@ packages:
       '@chlorophytum/arch': 0.33.0
       '@chlorophytum/hint-store-memory': 0.33.0
       '@chlorophytum/util-json': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-backend/0.33.0:
     resolution: {integrity: sha512-JKovmhbGCMxdnjOhV17mzO98zyAchXA+F9Hrq+e6oNKcZ8w8cbneJjzLRUb2cxhlHhHKxv0gSBrZME6T/N7nBw==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-expr-impl/0.33.0:
@@ -212,7 +212,7 @@ packages:
       '@chlorophytum/hltt-next-backend': 0.33.0
       '@chlorophytum/hltt-next-tr': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-expr/0.33.0:
@@ -222,7 +222,7 @@ packages:
       '@chlorophytum/hltt-next-expr-impl': 0.33.0
       '@chlorophytum/hltt-next-tr': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-stmt/0.33.0:
@@ -232,20 +232,20 @@ packages:
       '@chlorophytum/hltt-next-expr-impl': 0.33.0
       '@chlorophytum/hltt-next-tr': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-tr/0.33.0:
     resolution: {integrity: sha512-H6nCrw2PXImN2CGBVHTWUiFfHFdvUzeWacOemphMJiVLyRL5mHC/ntLVixSMaAxWVo/z1YFN75JC/KU194zvAA==}
     dependencies:
       '@chlorophytum/hltt-next-backend': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next-type-system/0.33.0:
     resolution: {integrity: sha512-1yETUkYKIlxUY7GTUPCPa0HOgCVzKgj2tzK4QwQNobwhUEwHhnoBENXL+7gfaCJSG24dzNdgwvwzArRx1byv7g==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hltt-next/0.33.0:
@@ -257,7 +257,7 @@ packages:
       '@chlorophytum/hltt-next-stmt': 0.33.0
       '@chlorophytum/hltt-next-tr': 0.33.0
       '@chlorophytum/hltt-next-type-system': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hm-combine/0.33.0:
@@ -266,7 +266,7 @@ packages:
       '@chlorophytum/arch': 0.33.0
       '@chlorophytum/hint-store-memory': 0.33.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hm-ideograph/0.33.1:
@@ -276,16 +276,16 @@ packages:
       '@chlorophytum/ideograph-hint-generator-1': 0.33.1
       '@chlorophytum/ideograph-shape-analyzer-1': 0.33.1
       '@chlorophytum/ideograph-shape-analyzer-shared': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/hm-select-glyphs/0.33.0:
     resolution: {integrity: sha512-BMV87uIGseYAyOBtS5q6Mb9dGnWeFSHihDk/1VySxkUuJ89WF62L5rlI+n03sVI+c51bHmLoVuzuoBipxgQ6YQ==}
     dependencies:
       '@chlorophytum/arch': 0.33.0
-      '@unicode/unicode-13.0.0': 1.1.0
+      '@unicode/unicode-13.0.0': 1.2.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/ideograph-hint-generator-1/0.33.1:
@@ -297,7 +297,7 @@ packages:
       '@chlorophytum/hint-maz': 0.33.0
       '@chlorophytum/ideograph-shape-analyzer-1': 0.33.1
       '@chlorophytum/ideograph-shape-analyzer-shared': 0.33.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/ideograph-shape-analyzer-1/0.33.1:
@@ -306,7 +306,7 @@ packages:
       '@chlorophytum/arch': 0.33.0
       '@chlorophytum/ideograph-shape-analyzer-shared': 0.33.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/ideograph-shape-analyzer-shared/0.33.0:
@@ -314,7 +314,7 @@ packages:
     dependencies:
       '@chlorophytum/arch': 0.33.0
       lodash: 4.17.21
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@chlorophytum/util-json/0.33.0:
@@ -322,7 +322,7 @@ packages:
     dependencies:
       JSONStream: 1.3.5
       strip-bom-stream: 4.0.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@eslint/eslintrc/0.4.3:
@@ -332,7 +332,7 @@ packages:
       ajv: 6.12.6
       debug: 4.3.2
       espree: 7.3.1
-      globals: 13.10.0
+      globals: 13.11.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       js-yaml: 3.14.1
@@ -363,7 +363,7 @@ packages:
       '@ot-builder/bin-util': 1.1.0
       '@ot-builder/errors': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/bin-util/1.1.0:
@@ -371,7 +371,7 @@ packages:
     dependencies:
       '@ot-builder/errors': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/cli-proc/1.1.0:
@@ -384,20 +384,20 @@ packages:
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/rectify': 1.1.0
       '@ot-builder/trace': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/common-impl/1.1.0:
     resolution: {integrity: sha512-Gnm1eCD2UMSXJhqoqK4vEGGIqVHKch+UF6VBO6uezT7vzdHfTW/IltIaB5ukbT4wumQfRMuZs9Eb6cabNae+hg==}
     dependencies:
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/errors/1.1.0:
     resolution: {integrity: sha512-88O6kaLJSWv+n1rboJ/lFEWEs3gRlABlLbqEgUX/tXqVs3cineH7ZZlBDpoNvVYnYV53KzReh8P0P4MIQklejQ==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-cff/1.1.0:
@@ -414,7 +414,7 @@ packages:
       '@ot-builder/stat-glyphs': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-encoding/1.1.0:
@@ -429,7 +429,7 @@ packages:
       '@ot-builder/ot-sfnt': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-ext-private/1.1.0:
@@ -444,7 +444,7 @@ packages:
       '@ot-builder/ot-sfnt': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-font/1.1.0:
@@ -467,7 +467,7 @@ packages:
       '@ot-builder/ot-name': 1.1.0
       '@ot-builder/ot-sfnt': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-glyph-store/1.1.0:
@@ -488,7 +488,7 @@ packages:
       '@ot-builder/stat-glyphs': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-layout/1.1.0:
@@ -507,7 +507,7 @@ packages:
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-metadata/1.1.0:
@@ -524,7 +524,7 @@ packages:
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-metric/1.1.0:
@@ -539,7 +539,7 @@ packages:
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-name/1.1.0:
@@ -556,7 +556,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       iconv-lite: 0.6.3
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-sfnt/1.1.0:
@@ -568,7 +568,7 @@ packages:
       '@ot-builder/ot-sfnt': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/io-bin-ttf/1.1.0:
@@ -584,7 +584,7 @@ packages:
       '@ot-builder/stat-glyphs': 1.1.0
       '@ot-builder/var-store': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-encoding/1.1.0:
@@ -592,7 +592,7 @@ packages:
     dependencies:
       '@ot-builder/ot-glyphs': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-ext-private/1.1.0:
@@ -600,7 +600,7 @@ packages:
     dependencies:
       '@ot-builder/ot-glyphs': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-glyphs/1.1.0:
@@ -610,7 +610,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-layout/1.1.0:
@@ -620,7 +620,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-metadata/1.1.0:
@@ -630,7 +630,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-name/1.1.0:
@@ -638,7 +638,7 @@ packages:
     dependencies:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-sfnt/1.1.0:
@@ -646,7 +646,7 @@ packages:
     dependencies:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot-standard-glyph-namer/1.1.0:
@@ -655,7 +655,7 @@ packages:
       '@ot-builder/ot-glyphs': 1.1.0
       '@ot-builder/prelude': 1.1.0
       aglfn: 1.0.2
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/ot/1.1.0:
@@ -672,13 +672,13 @@ packages:
       '@ot-builder/ot-standard-glyph-namer': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/prelude/1.1.0:
     resolution: {integrity: sha512-ghZ04jh2z8WD4UdHJVXKTyjzAo7zUD4lyilrO17fKT3WqD/LW/2vKC7inwepELwVC03uT8xaVhnflF1rYGMzKg==}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/primitive/1.1.0:
@@ -687,7 +687,7 @@ packages:
       '@ot-builder/bin-util': 1.1.0
       '@ot-builder/errors': 1.1.0
       '@ot-builder/prelude': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/rectify/1.1.0:
@@ -699,7 +699,7 @@ packages:
       '@ot-builder/ot-metadata': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/stat-glyphs/1.1.0:
@@ -712,7 +712,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/trace/1.1.0:
@@ -724,7 +724,7 @@ packages:
       '@ot-builder/ot-metadata': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/var-store/1.1.0:
@@ -737,7 +737,7 @@ packages:
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/variance': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /@ot-builder/variance/1.1.0:
@@ -747,11 +747,11 @@ packages:
       '@ot-builder/common-impl': 1.1.0
       '@ot-builder/prelude': 1.1.0
       '@ot-builder/primitive': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
-  /@unicode/unicode-13.0.0/1.1.0:
-    resolution: {integrity: sha512-iOVqHDBzYSb4EOLBirZM9qNur+J7hAb6YyzGlUoAFx2ubb3Qidc+VhAuRQAxnOOWEqMcIZpnVnJ/OkTxbNmgEA==}
+  /@unicode/unicode-13.0.0/1.2.0:
+    resolution: {integrity: sha512-ocuWbduBe3lNt/651RUs3eVbWLCQ7S40nxCCuErm0ynDZsraAzT9TGMea2qx9mUR59/un4a+SQSTHs1vB9QfPQ==}
     dev: false
 
   /JSONStream/1.3.5:
@@ -859,8 +859,8 @@ packages:
       supports-color: 5.5.0
     dev: true
 
-  /chalk/4.1.1:
-    resolution: {integrity: sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==}
+  /chalk/4.1.2:
+    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
     engines: {node: '>=10'}
     dependencies:
       ansi-styles: 4.3.0
@@ -979,13 +979,13 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-prettier/8.3.0_eslint@7.31.0:
+  /eslint-config-prettier/8.3.0_eslint@7.32.0:
     resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 7.31.0
+      eslint: 7.32.0
     dev: true
 
   /eslint-scope/5.1.1:
@@ -1013,8 +1013,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint/7.31.0:
-    resolution: {integrity: sha512-vafgJpSh2ia8tnTkNUkwxGmnumgckLh5aAbLa1xRmIn9+owi8qBNGKL+B881kNKNTy7FFqTEkpNkUvmw0n6PkA==}
+  /eslint/7.32.0:
+    resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
     hasBin: true
     dependencies:
@@ -1022,7 +1022,7 @@ packages:
       '@eslint/eslintrc': 0.4.3
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
-      chalk: 4.1.1
+      chalk: 4.1.2
       cross-spawn: 7.0.3
       debug: 4.3.2
       doctrine: 3.0.0
@@ -1038,7 +1038,7 @@ packages:
       file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.2
-      globals: 13.10.0
+      globals: 13.11.0
       ignore: 4.0.6
       import-fresh: 3.3.0
       imurmurhash: 0.1.4
@@ -1133,19 +1133,19 @@ packages:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
-      flatted: 3.2.1
+      flatted: 3.2.2
       rimraf: 3.0.2
     dev: true
 
-  /flatted/3.2.1:
-    resolution: {integrity: sha512-OMQjaErSFHmHqZe+PSidH5n8j3O0F2DdnVh8JB4j4eUQ2k6KvB0qGfrKIhapvez5JerBbmWkaLYUYWISaESoXg==}
+  /flatted/3.2.2:
+    resolution: {integrity: sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==}
     dev: true
 
   /fs-extra/10.0.0:
     resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
     engines: {node: '>=12'}
     dependencies:
-      graceful-fs: 4.2.6
+      graceful-fs: 4.2.8
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: false
@@ -1155,7 +1155,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       at-least-node: 1.0.0
-      graceful-fs: 4.2.6
+      graceful-fs: 4.2.8
       jsonfile: 6.1.0
       universalify: 2.0.0
     dev: false
@@ -1189,15 +1189,15 @@ packages:
       once: 1.4.0
       path-is-absolute: 1.0.1
 
-  /globals/13.10.0:
-    resolution: {integrity: sha512-piHC3blgLGFjvOuMmWZX60f+na1lXFDhQXBf1UYp2fXPXqvEUbOhNwi6BsQ0bQishwedgnjkwv1d9zKf+MWw3g==}
+  /globals/13.11.0:
+    resolution: {integrity: sha512-08/xrJ7wQjK9kkkRoI3OFUBbLx4f+6x3SGwcPvQ0QH6goFDrOU2oyAWrmh3dJezu65buo+HBMzAMQy6rovVC3g==}
     engines: {node: '>=8'}
     dependencies:
       type-fest: 0.20.2
     dev: true
 
-  /graceful-fs/4.2.6:
-    resolution: {integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==}
+  /graceful-fs/4.2.8:
+    resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: false
 
   /has-flag/3.0.0:
@@ -1303,7 +1303,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: 4.2.6
+      graceful-fs: 4.2.8
     dev: false
 
   /jsonparse/1.3.1:
@@ -1405,7 +1405,7 @@ packages:
       '@ot-builder/primitive': 1.1.0
       '@ot-builder/rectify': 1.1.0
       '@ot-builder/trace': 1.1.0
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /parent-module/1.0.1:
@@ -1608,15 +1608,15 @@ packages:
     resolution: {integrity: sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=}
     dev: false
 
-  /tslib/2.3.0:
-    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+  /tslib/2.3.1:
+    resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: false
 
   /typable/1.0.3:
     resolution: {integrity: sha512-h40MsIvzT8BZ3vRBkLhUJOjDSVbf7Gg0ade2PtPCgUbCXbFiMsarJIig3B/K6FrXMg0hG10du7+V9jRxBoP0hQ==}
     engines: {node: '>= 8.9.0'}
     dependencies:
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /type-check/0.4.0:
@@ -1636,7 +1636,7 @@ packages:
     engines: {node: '>= 8.9.0'}
     dependencies:
       clipper-lib: 6.4.2
-      tslib: 2.3.0
+      tslib: 2.3.1
     dev: false
 
   /universalify/2.0.0:
@@ -1659,15 +1659,15 @@ packages:
     engines: {node: '>= 8.9.0'}
     hasBin: true
     dependencies:
-      chalk: 4.1.1
+      chalk: 4.1.2
       cli-cursor: 3.1.0
       fast-deep-equal: 3.1.3
       fs-extra: 10.0.0
       semaphore-async-await: 1.5.1
       strip-ansi: 6.0.0
-      tslib: 2.3.0
+      tslib: 2.3.1
       which: 2.0.2
-      yargs: 17.0.1
+      yargs: 17.1.1
     dev: false
 
   /which/2.0.2:
@@ -1708,8 +1708,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /yargs/17.0.1:
-    resolution: {integrity: sha512-xBBulfCc8Y6gLFcrPvtqKz9hz8SO0l1Ni8GgDekvBX2ro0HRQImDGnikfc33cgzcYUSncapnNcZDjVFIH3f6KQ==}
+  /yargs/17.1.1:
+    resolution: {integrity: sha512-c2k48R0PwKIqKhPMWjeiF6y2xY/gPMUlro0sgxqXpbOIohWiLNXWslsootttv7E1e73QPAMQSg5FeySbVcpsPQ==}
     engines: {node: '>=12'}
     dependencies:
       cliui: 7.0.4

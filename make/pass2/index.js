@@ -26,5 +26,24 @@ module.exports = async function makeFont(argv) {
 	a.glyf.__glyf_pad__ = { advanceWidth: 0, contours: [[GlyphPoint.cornerFromXY(0, 0)]] };
 	a.glyph_order = gc(a, { rankMap: [["__glyf_pad__", 1]] });
 
+	// Patch
+	if (argv.hint) {
+		a.name.forEach(entry => {
+			switch (entry.nameID) {
+				case 1:
+				case 16:
+					entry.nameString = entry.nameString + " H";
+					break;
+				case 3:
+				case 4:
+					entry.nameString = entry.nameString.replace(/^([a-z]+ [a-z]+ [a-z]+)/i, "$1 H");
+					break;
+				case 6:
+					entry.nameString = entry.nameString.replace(/^([a-z]+-[a-z]+-[a-z]+)/i, "$1-H");
+					break;
+			}
+		});
+	}
+
 	await buildFont(a, { to: argv.o });
 };

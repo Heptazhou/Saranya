@@ -319,13 +319,11 @@
 			// "hc-hw": "SourceHanSansHWHC"
 			// /*  */
 			"ja": "SourceHanSans",
-			// "cl": "SourceHanSansK",
 			"sc": "SourceHanSansSC",
-			"tc": "SourceHanSansTC"
+			"tc": "SourceHanSansK"
 			// "ja-hw": "SourceHanSansHW",
-			// "cl-hw": "SourceHanSansHWK",
 			// "sc-hw": "SourceHanSansHWSC",
-			// "tc-hw": "SourceHanSansHWTC"
+			// "tc-hw": "SourceHanSansHWK"
 		},
 		"style": {
 			// "extralight": "ExtraLight",

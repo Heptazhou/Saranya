@@ -1,4 +1,6 @@
 
 *.cmd text eol=crlf
-/*.json linguist-detectable
-/make/*/*/** linguist-vendored
+*.js linguist-vendored
+*.mjs linguist-vendored
+config.json linguist-detectable
+verdafile.mjs -linguist-vendored

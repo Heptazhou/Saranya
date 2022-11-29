@@ -7,7 +7,7 @@
 *****
 ##	Build
 ```
-pip install [-U] afdko
+pipx install afdko
 pnpm i
 pnpm up
 pnpm build ttf ttc

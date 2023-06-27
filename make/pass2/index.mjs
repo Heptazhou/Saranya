@@ -31,17 +31,18 @@ export default (async function makeFont(argv) {
 
 	if (argv.hint)
 		main.name.records.forEach(entry => {
+			entry.value = entry.value.toString();
 			switch (entry.nameID) {
 				case 1:
 				case 16:
-					entry.value = String(entry.value) + " H";
+					entry.value = entry.value.replace(/^(.+)/i, "$1 H");
 					break;
 				case 3:
 				case 4:
-					entry.value = String(entry.value).replace(/^([a-z]+ [a-z]+ [a-z]+)/i, "$1 H");
+					entry.value = entry.value.replace(/^([a-z]+ [a-z]+ [a-z]+)/i, "$1 H");
 					break;
 				case 6:
-					entry.value = String(entry.value).replace(/^([a-z]+-[a-z]+-[a-z]+)/i, "$1-H");
+					entry.value = entry.value.replace(/^([a-z]+-[a-z]+-[a-z]+)/i, "$1-H");
 					break;
 			}
 		});

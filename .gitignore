@@ -1,3 +1,7 @@
+
+dist/
+sources/shs/*.otf
+
 bin/
 build/
 .build/
@@ -11,7 +15,7 @@ preview/test-fonts
 *.zip
 *.tgz
 *.log
-*.exe
+# *.exe
 *.aux
 *.fls
 *.toc
